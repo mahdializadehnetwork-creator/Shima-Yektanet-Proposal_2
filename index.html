@@ -294,8 +294,52 @@ aside .logo-slot.has-img img{max-height:30px}
 #theme{position:fixed;left:18px;bottom:18px;z-index:60;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-size:18px;box-shadow:var(--shadow)}
 #file{display:none}
 
+/* ---------- v6 additions ---------- */
+.pillar:nth-child(7){border-top-color:var(--leather-2);grid-column:1/-1}
+.prio{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:18px}
+.prio li{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.prio .r{font-size:30px;font-weight:900;color:var(--leather);line-height:1}
+.prio b{display:block;margin-top:8px;font-size:15px}
+.prio small{display:block;color:var(--muted);font-size:12.5px;line-height:1.7}
+.prio li:first-child{background:var(--leather);border-color:var(--leather);color:#fff}
+.prio li:first-child .r,.prio li:first-child small{color:#f1dcc4}
+.card ul.ls{list-style:none;font-size:14px;margin-top:8px}
+.card ul.ls li{padding-right:16px;position:relative;margin-bottom:6px;line-height:1.8}
+.card ul.ls li::before{content:"";position:absolute;right:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--leather-2)}
+.step-no{position:absolute;left:18px;top:10px;font-size:40px;font-weight:900;color:var(--sand);line-height:1}
+.phase .badge{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--teal);padding:2px 12px;border-radius:999px;margin-bottom:10px}
+.phase.p2 .badge{background:var(--leather)}
+.ai-fam{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 6px}
+.ai-fam div{background:var(--sand);border-radius:14px;padding:10px 4px;text-align:center;font-size:13px;font-weight:800}
+.ai-fam span{display:block;font-size:30px;line-height:1.3}
+.mini{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13px;color:var(--muted);line-height:1.8}
+.mini b{display:block;color:var(--ink);font-size:14.5px}
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.goal{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.goal .fromto{display:flex;align-items:baseline;gap:12px;font-weight:900;margin-top:4px}
+.goal .from{font-size:24px;color:var(--muted)}
+.goal .arr{color:var(--gold);font-size:22px}
+.goal .to{font-size:46px;color:var(--leather);line-height:1.2}
+.goal .gbar{height:10px;background:var(--sand);border-radius:6px;overflow:hidden;margin:12px 0 8px}
+.goal .gbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal-2),var(--teal));border-radius:6px;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.goal small{color:var(--muted);font-size:12.5px}
+.langs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 6px}
+.langs span{background:var(--teal);color:#fff;padding:3px 16px;border-radius:999px;font-size:13px;font-weight:700}
+.catalog{border-top:4px solid var(--teal)}
+.months{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.mo{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;border-top:4px solid var(--gold);box-shadow:var(--shadow)}
+.mo:last-child{border-top-color:var(--leather)}
+.mo h4{font-size:17px;display:flex;justify-content:space-between;align-items:baseline}
+.mo h4 small{font-size:12px;color:var(--muted);font-weight:700}
+.mo .amt{font-size:22px;font-weight:900;color:var(--leather)}
+.mo .amt small{font-size:12px;color:var(--muted);font-weight:400}
+.mo .occ{font-size:13px;margin-top:8px;font-weight:700;line-height:1.8}
+.mo p{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:6px}
+
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
+  .prio{grid-template-columns:repeat(3,1fr)}
+  .months{grid-template-columns:repeat(2,1fr)}
   .g4,.kpi,.stats{grid-template-columns:repeat(2,1fr)}
   .g3,.family{grid-template-columns:1fr 1fr}
   .flow{grid-template-columns:1fr 1fr}
@@ -310,7 +354,8 @@ aside .logo-slot.has-img img{max-height:30px}
   #menuBtn{display:grid;place-items:center;position:fixed;top:12px;right:12px;z-index:70;width:46px;height:46px;border-radius:14px;border:0;background:#21150d;color:#f1c98a;font-size:20px;cursor:pointer}
   section{padding:70px 16px}
   #cover{padding-top:84px}
-  .g2,.g3,.g4,.kpi,.stats,.family,.flow,.do-dont,.roadmap{grid-template-columns:1fr}
+  .g2,.g3,.g4,.kpi,.stats,.family,.flow,.do-dont,.roadmap,.goals,.months{grid-template-columns:1fr}
+  .prio{grid-template-columns:1fr 1fr}
   .slider{aspect-ratio:1}
   .pb{grid-template-columns:1fr}
   .chip.c1,.chip.c2{right:0}
@@ -343,13 +388,14 @@ aside .logo-slot.has-img img{max-height:30px}
       <li><a href="#summary">خلاصه مدیریتی</a></li>
       <li><a href="#brand">شناخت برند شیما</a></li>
       <li><a href="#challenge">چالش‌ها و فرصت‌ها</a></li>
-      <li><a href="#strategy">استراتژی شش‌محوری</a></li>
+      <li><a href="#strategy">استراتژی هفت‌محوری</a></li>
       <li><a href="#services">خدمات پیشنهادی یکتانت</a></li>
       <li><a href="#billboard">بیلبورد دیجیتال</a></li>
-      <li><a href="#content">اینستاگرام، UGC و محتوا</a></li>
-      <li><a href="#crm">CRM و خرید خانوادگی</a></li>
-      <li><a href="#mall">حضور در مال‌ها (DOOH)</a></li>
-      <li><a href="#export">صادرات به کشورهای همسایه</a></li>
+      <li><a href="#content">اینستاگرام و محتوا</a></li>
+      <li><a href="#crm">CRM و کمپین اجتماعی</a></li>
+      <li><a href="#mall">حضور در مال‌های شیما</a></li>
+      <li><a href="#network">توسعه شبکه فروشگاهی</a></li>
+      <li><a href="#export">صادرات و کاتالوگ</a></li>
       <li><a href="#budget">سناریوهای بودجه</a></li>
       <li><a href="#kpi">KPI و اندازه‌گیری</a></li>
       <li><a href="#timeline">زمان‌بندی اجرا</a></li>
@@ -375,12 +421,12 @@ aside .logo-slot.has-img img{max-height:30px}
   <div class="hero-wrap">
     <div>
       <div class="eyebrow rv d1">پروپوزال همکاری بازاریابی دیجیتال</div>
-      <h1 class="rv d1">از چرم تا زیره، ساخت ایران؛<br><span style="color:var(--leather)">از ATL تا تبلیغات ۳۶۰ درجه دیجیتال</span></h1>
-      <p class="hero-sub rv d2">ورود قدرتمند شیما به فضای دیجیتال، فعال کردن ارتباط دوسویه با مشتری، و رشد فروش کفش چرم، با محوریت خانواده و ارزش‌های برند.</p>
+      <h1 class="rv d1">شیما، برای همه لحظه‌های خانواده<br><span style="color:var(--leather)">از ATL تا تبلیغات ۳۶۰ درجه دیجیتال</span></h1>
+      <p class="hero-sub rv d2">ورود قدرتمند شیما به اپلیکیشن‌ها و فضای دیجیتال، فعال کردن ارتباط دوسویه با مشتری، رشد فروش همه محصولات شیما برای پا، و پشتیبانی از توسعه شبکه فروشگاهی و صادرات.</p>
       <div class="hero-meta rv d3">
         <div><b>شیما کفش</b>کارفرما</div>
         <div><b>یکتانت</b>ارائه‌دهنده</div>
-        <div><b>۶ هفته</b>فاز اول اجرا</div>
+        <div><b>۴ ماه</b>آذر تا نوروز ۱۴۰۶</div>
       </div>
     </div>
     <div class="hero-art rv d2">
@@ -396,15 +442,16 @@ aside .logo-slot.has-img img{max-height:30px}
 <!-- ================= SUMMARY ================= -->
 <section id="summary">
   <div class="eyebrow rv">۰۲ · خلاصه مدیریتی</div>
-  <h2 class="rv">یک کمپین، شش هدف، یک روایت: «شیما، کفش خانواده ایرانی»</h2>
-  <p class="lead rv d1">با نزدیک شدن فصل اوج خرید کفش پیش از نوروز، پیشنهاد ما این است که از همین حالا یک زیرساخت دیجیتال قابل اندازه‌گیری ساخته شود تا مخاطبی که شیما را از تلویزیون می‌شناسد، در اینستاگرام، وب، اپلیکیشن‌ها و مال‌ها به خریدار و مشتری وفادار تبدیل شود.</p>
+  <h2 class="rv">یک روایت، هفت محور: «شیما، برای همه لحظه‌های خانواده»</h2>
+  <p class="lead rv d1">چهار ماه تا نوروز ۱۴۰۶، یعنی اوج خرید کفش، باقی مانده است. پیشنهاد ما این است که در همین چهار ماه یک زیرساخت دیجیتال قابل اندازه‌گیری ساخته شود که اولویتش حضور در اپلیکیشن‌هاست. هدف این است که مخاطبی که شیما را از تلویزیون می‌شناسد، در اپ‌ها، اینستاگرام، وب و مال‌هایی که شیما در آن‌ها شعبه دارد به خریدار، مشتری وفادار و حتی شریک فرانچایز تبدیل شود. بودجه بر اساس مناسبت‌های همین چهار ماه تقسیم شده است.</p>
   <div class="grid g3" style="margin-top:28px">
-    <div class="card rv d1"><div class="ic">◎</div><h3>فعال‌سازی اینستاگرام</h3><p class="muted">اینفلوئنسر و محتوای UGC برای افزایش تعامل و ارتباط دوسویه با مشتری</p></div>
-    <div class="card rv d2"><div class="ic">◈</div><h3>فروش کفش چرم</h3><p class="muted">کمپین محصول، ریتارگتینگ، بیلبورد دیجیتال و تبلیغات همسان روی سایت شیما</p></div>
-    <div class="card rv d3"><div class="ic">▣</div><h3>حضور در اپ‌ها</h3><p class="muted">تبلیغات درون‌اپلیکیشن در روبیکا، بادصبا، ایتا، آی‌گپ، سروش‌پلاس، بله و شبکه اپ‌های یکتانت</p></div>
-    <div class="card rv d1"><div class="ic">⌂</div><h3>حضور در مال‌ها و ارتباط با مشتریان در مراکز خرید</h3><p class="muted">نمایشگرهای آی‌رسانه در مراکز خرید تهران، جایی که خانواده‌ها برای خرید و تفریح حضور دارند</p></div>
-    <div class="card rv d2"><div class="ic">↻</div><h3>وفاداری مشتری با CRM</h3><p class="muted">پیامک داینامیک، پوش و ایمیل نجوا با جریان‌های طراحی‌شده توسط یکتانت و محوریت خرید خانوادگی</p></div>
-    <div class="card rv d3"><div class="ic">✈</div><h3>صادرات</h3><p class="muted">گوگل ادز و تریدیک با هدف‌گیری کاربران بر اساس منطقه زمانی و IP خارج از ایران در عراق، پاکستان و افغانستان</p></div>
+    <div class="card rv d1"><div class="ic">▣</div><h3>حضور در اپ‌ها <span class="tag t-v">اولویت اول</span></h3><p class="muted">دو مسیر هم‌زمان: فروش مستقیم و جذب آنلاین متقاضیان فرانچایز؛ در روبیکا، بادصبا، ایتا، آی‌گپ، سروش‌پلاس، بله و شبکه اپ‌های یکتانت</p></div>
+    <div class="card rv d2"><div class="ic">◈</div><h3>فروش سبد محصول</h3><p class="muted">به ترتیب اولویت شیما: کفش چرم و بوت، شیمکس، کفش پارچه‌ای تنفسی، صندل سرپایی، چکمه و دمپایی</p></div>
+    <div class="card rv d3"><div class="ic">◎</div><h3>اینستاگرام در دو فاز</h3><p class="muted">فاز اول: فعال‌سازی پیج بدون اینفلوئنسر، حدود ۲ ماه. فاز دوم: رشد با اینفلوئنسرهای هوش مصنوعی خانواده شیما</p></div>
+    <div class="card rv d1"><div class="ic">⌂</div><h3>تبلیغ در مال‌های شیما</h3><p class="muted">نمایشگرهای آی‌رسانه فقط در مال‌هایی که شیما در آن‌ها شعبه دارد؛ تبلیغ چند قدم آن‌طرف‌تر از فروشگاه</p></div>
+    <div class="card rv d2"><div class="ic">↻</div><h3>وفاداری و کمپین اجتماعی</h3><p class="muted">CRM با نجوا، و تبدیل خرید خانوادگی به خرید جمعی و اجتماعی در مدارس، سازمان‌ها و نهادها</p></div>
+    <div class="card rv d3"><div class="ic">✈</div><h3>صادرات</h3><p class="muted">اولویت اول: کاتالوگ دیجیتال فارسی، عربی و انگلیسی روی سایت شیما؛ سپس حضور در شبکه‌ها و اپ‌های عراق، افغانستان، روسیه و CIS</p></div>
+    <div class="card rv d1" style="grid-column:1/-1"><div class="ic">⊞</div><h3>توسعه شبکه فروشگاهی</h3><p class="muted">پشتیبانی دیجیتال از سه هدف شیما تا پایان ۱۴۰۶: رسیدن به ۵۰ فروشگاه شرکتی، ۵۰ فروشگاه فرانچایز و دست‌کم ۱۰ فرانچایز خارج از ایران</p></div>
   </div>
 </section>
 
@@ -418,7 +465,7 @@ aside .logo-slot.has-img img{max-height:30px}
     <div class="img-slot slide on" data-img="p1" data-label="کفش چرم مردانه" data-art="oxford"></div>
     <div class="img-slot slide" data-img="p2" data-label="کفش چرم زنانه" data-art="heel"></div>
     <div class="img-slot slide" data-img="p3" data-label="نیم‌بوت چرم" data-art="boot"></div>
-    <div class="img-slot slide" data-img="p4" data-label="سرپایی کراکس شیما" data-art="clog"></div>
+    <div class="img-slot slide" data-img="p4" data-label="شیمکس؛ سرپایی سبک و راحت شیما" data-art="clog"></div>
     <div class="img-slot slide" data-img="p5" data-label="کفش بچگانه؛ برای همه اعضای خانواده" data-art="riding"></div>
     <button class="sl-nav sl-prev" aria-label="قبلی">‹</button>
     <button class="sl-nav sl-next" aria-label="بعدی">›</button>
@@ -435,65 +482,97 @@ aside .logo-slot.has-img img{max-height:30px}
   </div>
 
   <div class="grid g3" style="margin-top:36px">
-    <div class="card rv"><h3>سبد محصول</h3><p class="muted">کفش چرم، پوتین چرم، سرپایی مشابه کراکس، کفش سوارکاری چرم. ایجاد زیربرند برای هر خط در دست بررسی است. <span class="tag t-v">مستند</span></p></div>
+    <div class="card rv"><h3>سبد محصول</h3><p class="muted">همه تولیدات شیما کفش نیست، اما همه برای پاست: کفش چرم، بوت و نیم‌بوت، شیمکس، کفش پارچه‌ای تنفسی، صندل سرپایی، چکمه، دمپایی و کفش سوارکاری. ایجاد زیربرند برای هر خط در دست بررسی است. <span class="tag t-v">مستند</span></p></div>
     <div class="card rv d1"><h3>ارزش‌های بنیان‌گذار</h3><p class="muted">کیفیت بالا با قیمت مناسب، انصاف، صداقت، کارآفرینی، اشتغال‌زایی و فرصت دادن به جوانان؛ تأکید بر حضور نام «شیما» روی محصول. <span class="tag t-v">مستند</span></p></div>
-    <div class="card rv d2"><h3>سابقه رسانه‌ای</h3><p class="muted">کمپین‌های گسترده محیطی و حضور ATL در صداوسیما. آگاهی از برند بالاست؛ حلقه تبدیل دیجیتال کامل نیست. <span class="tag t-i">برداشت</span></p></div>
+    <div class="card rv d2"><h3>سابقه رسانه‌ای</h3><p class="muted">کمپین‌های گسترده محیطی و حضور ATL در صداوسیما. برداشت اولیه ما این بود که آگاهی از برند بالاست، اما تیم شیما آن را کمتر از انتظار می‌داند. علت‌سنجی این موضوع در بخش بعد آمده است. <span class="tag t-v">مستند · جلسه</span></p></div>
   </div>
 </section>
 
 <!-- ================= CHALLENGE ================= -->
 <section id="challenge">
-  <div class="eyebrow rv">۰۴ · چالش‌ها و فرصت‌ها</div>
-  <h2 class="rv">آگاهی ساخته شده؛ حالا باید به تعامل و خرید قابل‌سنجش تبدیل شود</h2>
+  <div class="eyebrow rv">۰۴ · چالش‌ها، فرصت‌ها و آگاهی از برند</div>
+  <h2 class="rv">آگاهی از برند را باید سنجید، نه فرض کرد؛ بعد آن را به تعامل و خرید رساند</h2>
   <div class="grid g2" style="margin-top:20px">
     <div class="card rv">
       <h3 style="color:#b04a2a">چالش‌ها</h3>
       <ul style="list-style:none;font-size:14.5px">
         <li>• تعامل پایین و فعالیت کم در پیج اینستاگرام <span class="tag t-v">مستند</span></li>
+        <li>• آگاهی از برند کمتر از انتظار، به ارزیابی تیم شیما <span class="tag t-v">مستند · جلسه</span></li>
         <li>• شعب کنار خیابان؛ دور از مسیر «خرید + تفریح» خانواده‌ها <span class="tag t-v">مستند</span></li>
+        <li>• نبود کاتالوگ دیجیتال چندزبانه برای مخاطب صادراتی <span class="tag t-v">مستند · جلسه</span></li>
         <li>• نبود جریان منظم ارتباط با مشتریان پس از خرید (CRM) <span class="tag t-i">برداشت</span></li>
-        <li>• نامشخص بودن مسیر ورود به بازار عراق، پاکستان و افغانستان <span class="tag t-i">برداشت</span></li>
       </ul>
     </div>
     <div class="card rv d1">
       <h3 style="color:var(--teal)">فرصت‌ها</h3>
       <ul style="list-style:none;font-size:14.5px">
         <li>• مزیت قیمت/کیفیت واقعی و قابل اثبات با زنجیره تولید داخلی <span class="tag t-v">مستند</span></li>
-        <li>• نزدیک شدن فصل سرما، یلدا و نوروز <span class="tag t-i">برداشت</span></li>
-        <li>• «خرید خانوادگی» به‌عنوان پیشنهاد متمایز و هم‌راستا با ارزش‌های برند <span class="tag t-v">مستند</span></li>
-        <li>• UGC با سازندگان جوان؛ هم محتوا، هم اشتغال‌زایی <span class="tag t-r">پیشنهاد</span></li>
+        <li>• چهار ماه پرمناسبت تا نوروز: روز مادر، یلدا، روز پدر، رمضان و پیش‌نوروز <span class="tag t-i">برداشت</span></li>
+        <li>• «خرید خانوادگی» و خرید سازمانی، هم‌راستا با ارزش‌های برند <span class="tag t-v">مستند</span></li>
+        <li>• خانواده هوش مصنوعی شیما؛ قصه‌گویی مستمر بدون وابستگی به اینفلوئنسر <span class="tag t-v">مستند · جلسه</span></li>
+        <li>• برنامه توسعه فرانچایز؛ متقاضیان بالقوه در اپ‌ها و کشورهای همسایه <span class="tag t-i">برداشت</span></li>
       </ul>
     </div>
   </div>
-  <div class="quote rv">پیام محوری پیشنهادی <span class="tag t-r">پیشنهاد</span>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:10px">
-      <b style="font-size:22px;color:var(--leather)">«شیما، چرم واقعی و قیمت عالی»</b>
-      <span class="muted" style="font-size:14px">یا</span>
-      <b style="font-size:22px;color:var(--teal)">«یک برند برای همه قدم‌های خانواده»</b>
-    </div>
+
+  <h3 class="rv" style="margin-top:40px">علت‌سنجی آگاهی از برند <span class="tag t-r">پیشنهاد</span></h3>
+  <p class="muted rv">در جلسه، برداشت ما این بود که آگاهی از برند شیما بالاست، اما تیم شیما این را قبول ندارد. پیشنهاد ما این است که آگاهی در هفته‌های اول همکاری اندازه‌گیری شود و راهکارها بر اساس علت واقعی انتخاب شوند.</p>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card rv"><span class="step-no">۱</span><h3>سنجش وضع فعلی</h3><ul class="ls">
+      <li>نظرسنجی کوتاه آنلاین از مخاطب هدف: یادآوری بدون کمک («یک برند کفش نام ببرید») و با کمک («شیما را می‌شناسید؟»)</li>
+      <li>روند جست‌وجوی «شیما کفش» در گوگل و سهم ترافیک برندی سایت</li>
+      <li>تفکیک نتایج بر اساس سن، شهر و دسته محصول</li></ul></div>
+    <div class="card rv d1"><span class="step-no">۲</span><h3>فرضیه‌های علت</h3><ul class="ls">
+      <li>نام شیما شناخته‌شده است، اما در ذهن مخاطب به «کفش» یا به دسته‌هایی مثل شیمکس و کفش پارچه‌ای وصل نیست</li>
+      <li>آگاهی در مخاطب تلویزیون متمرکز است و در نسل جوان و کاربران دیجیتال ضعیف است</li>
+      <li>آگاهی به شهرهایی محدود است که شیما در آن‌ها شعبه دارد</li>
+      <li>نبود یک شعار ثابت و تکرارشونده که نام شیما را در ذهن نگه دارد</li></ul></div>
+    <div class="card rv d2"><span class="step-no">۳</span><h3>راهکار برای هر علت</h3><ul class="ls">
+      <li>شعار واحد «شیما، برای همه لحظه‌های خانواده» در همه کانال‌ها و تیزرها</li>
+      <li>تبلیغ دسته‌محور با نام شیما کنار هر محصول؛ مثلاً «شیمکس، از شیما»</li>
+      <li>اپ‌ها، اینستاگرام و ویدیو برای رسیدن به مخاطب جوان و شهرهای بدون شعبه</li>
+      <li>سنجش دوباره در اسفند و مقایسه با وضع اولیه</li></ul></div>
+  </div>
+
+  <div class="quote rv">شعار اصلی <span class="tag t-v">مستند · خواسته برند</span>
+    <div style="margin-top:10px"><b style="font-size:26px;color:var(--leather)">«شیما، برای همه لحظه‌های خانواده»</b></div>
+    <p class="muted" style="font-size:14px;margin-top:8px">پیام‌های پشتیبان، بسته به محصول و کانال: «چرم واقعی، قیمت منصفانه» · «از چرم تا زیره، ساخت ایران» · «برای همه قدم‌های خانواده» <span class="tag t-r">پیشنهاد</span></p>
   </div>
 </section>
 
 <!-- ================= STRATEGY ================= -->
 <section id="strategy">
   <div class="eyebrow rv">۰۵ · استراتژی</div>
-  <h2 class="rv">شش محور، مطابق اولویت‌های مارکتینگ شیما</h2>
-  <p class="lead rv d1">هر محور مستقیماً به یکی از اولویت‌ها یا خواسته‌های اعلام‌شده برند پاسخ می‌دهد. ترتیب اجرا بر اساس اثر روی فروش نزدیک‌مدت و ریسک تنظیم شده است.</p>
+  <h2 class="rv">هفت محور، به ترتیب اولویت‌های شیما</h2>
+  <p class="lead rv d1">هر محور مستقیماً به یکی از اولویت‌ها یا خواسته‌های اعلام‌شده برند پاسخ می‌دهد. به خواست شیما، حضور در اپ‌ها در صدر قرار گرفته است.</p>
   <div class="grid g3" style="margin-top:26px">
-    <div class="card pillar rv d1"><span class="num">۱</span><h3>اینستاگرام و تعامل</h3><p class="muted" style="font-size:13.5px">اولویت برند: فعال کردن پیج و افزایش تعامل</p>
-      <ul><li>اینفلوئنسرهای خانوادگی و سبک زندگی</li><li>UGC مشتریان و کارکنان خط تولید</li><li>تبلیغات بازدیدی برای دیده‌شدن محتوا</li></ul></div>
-    <div class="card pillar rv d2"><span class="num">۲</span><h3>فروش کفش چرم</h3><p class="muted" style="font-size:13.5px">اولویت برند: فروش کفش چرم</p>
-      <ul><li>کمپین محصول و ویترین</li><li>ریتارگتینگ سبد خرید رهاشده</li><li>بیلبورد دیجیتال و ویدیو در تلوبیون، نماشا و دالفک</li></ul></div>
-    <div class="card pillar rv d3"><span class="num">۳</span><h3>حضور در اپ‌ها</h3><p class="muted" style="font-size:13.5px">اولویت برند: حضور در اپلیکیشن‌ها</p>
-      <ul><li>روبیکا، بادصبا، ایتا، آی‌گپ، سروش‌پلاس و بله</li><li>شبکه +۷٬۰۰۰ اپلیکیشن ایرانی یکتانت</li><li>هدف‌گیری جغرافیایی و علایق کاربر</li></ul></div>
-    <div class="card pillar rv d1"><span class="num">۴</span><h3>مال‌ها و مراکز خرید</h3><p class="muted" style="font-size:13.5px">رویکرد برند شیما: ترکیب خرید و تفریح</p>
-      <ul><li>نمایشگرهای آی‌رسانه در مراکز خرید</li><li>شروع از همین حالا یا هم‌زمان با انتقال شعب</li><li>معرفی شیما به خانواده‌ها در زمان تفریح</li></ul></div>
-    <div class="card pillar rv d2"><span class="num">۵</span><h3>وفاداری و CRM</h3><p class="muted" style="font-size:13.5px">خواسته برند: حفظ ارتباط با مشتری</p>
-      <ul><li>پیامک داینامیک، پوش و ایمیل نجوا</li><li>جریان پیام‌ها طراحی‌شده توسط یکتانت</li><li>پیشنهاد خرید خانوادگی پلکانی</li></ul></div>
-    <div class="card pillar rv d3"><span class="num">۶</span><h3>صادرات</h3><p class="muted" style="font-size:13.5px">اولویت برند: فروش در کشورهای اطراف</p>
-      <ul><li>گوگل ادز (فرست‌ادز) و تریدیک</li><li>هدف‌گیری بر اساس منطقه زمانی و IP</li><li>رپورتاژ در رسانه‌های خارجی تریبون</li></ul></div>
+    <div class="card pillar rv d1"><span class="num">۱</span><h3>حضور در اپ‌ها</h3><p class="muted" style="font-size:13.5px">اولویت اول برند</p>
+      <ul><li>فروش مستقیم: هدایت کاربر اپ‌ها به خرید از سایت شیما</li><li>فرانچایز آنلاین: جذب و ثبت درخواست متقاضیان نمایندگی</li><li>روبیکا، بادصبا، ایتا، آی‌گپ، سروش‌پلاس، بله و شبکه +۷٬۰۰۰ اپ یکتانت</li></ul></div>
+    <div class="card pillar rv d2"><span class="num">۲</span><h3>فروش سبد محصول</h3><p class="muted" style="font-size:13.5px">اولویت برند: رشد فروش در همه دسته‌ها، نه فقط چرم</p>
+      <ul><li>کمپین محصول و ویترین به ترتیب اولویت دسته‌ها</li><li>ریتارگتینگ سبد خرید رهاشده</li><li>بیلبورد دیجیتال و ویدیو در تلوبیون، نماشا و دالفک</li></ul></div>
+    <div class="card pillar rv d3"><span class="num">۳</span><h3>اینستاگرام در دو فاز</h3><p class="muted" style="font-size:13.5px">اولویت برند: فعال کردن پیج و افزایش تعامل</p>
+      <ul><li>فاز ۱ (حدود ۲ ماه): فعال‌سازی بدون اینفلوئنسر</li><li>فاز ۲: رشد با خانواده هوش مصنوعی شیما</li><li>تبلیغات بازدیدی برای دیده‌شدن محتوای پیج</li></ul></div>
+    <div class="card pillar rv d1"><span class="num">۴</span><h3>مال‌های شیما</h3><p class="muted" style="font-size:13.5px">فقط مال‌هایی که شیما در آن‌ها حضور دارد</p>
+      <ul><li>نمایشگرهای آی‌رسانه در همان مال‌ها</li><li>هدایت بیننده به شعبه‌ای که چند قدم آن‌طرف‌تر است</li><li>افزودن هر مال جدید هم‌زمان با افتتاح شعبه</li></ul></div>
+    <div class="card pillar rv d2"><span class="num">۵</span><h3>وفاداری و کمپین اجتماعی</h3><p class="muted" style="font-size:13.5px">خواسته برند: حفظ ارتباط و خرید جمعی</p>
+      <ul><li>پیامک داینامیک، پوش و ایمیل نجوا</li><li>پیشنهاد خرید خانوادگی پلکانی</li><li>خرید سازمانی: مدارس، سازمان‌ها و نهادها</li></ul></div>
+    <div class="card pillar rv d3"><span class="num">۶</span><h3>صادرات</h3><p class="muted" style="font-size:13.5px">اولویت اول صادرات: کاتالوگ دیجیتال سه‌زبانه</p>
+      <ul><li>کاتالوگ فارسی، عربی و انگلیسی روی سایت شیما</li><li>شبکه‌ها و اپ‌های بومی هر کشور هدف</li><li>عراق، افغانستان، روسیه و CIS</li></ul></div>
+    <div class="card pillar rv d1"><span class="num">۷</span><h3>توسعه شبکه فروشگاهی</h3><p class="muted" style="font-size:13.5px">هدف برند تا پایان ۱۴۰۶</p>
+      <ul><li>کمپین افتتاح برای هر فروشگاه شرکتی جدید</li><li>جذب لید فرانچایز داخلی از اپ‌ها و وب</li><li>جذب نماینده و فرانچایز خارجی از کانال‌های صادراتی</li></ul></div>
   </div>
-  <p class="note rv">این شش محور با یک لایه نگهداشت مشتری (CRM و نجوا) به هم متصل می‌شوند تا هر خرید، آغاز یک رابطه باشد و نه پایان آن. <span class="tag t-r">پیشنهاد</span></p>
+
+  <h3 class="rv" style="margin-top:40px">ترتیب اولویت فروش محصولات <span class="tag t-v">مستند · جلسه</span></h3>
+  <p class="muted rv">بودجه کمپین محصول و ریتارگتینگ به همین ترتیب وزن‌دهی می‌شود؛ هدف، رشد فروش در همه دسته‌هاست و نه فقط چرم.</p>
+  <ol class="prio rv d1">
+    <li><span class="r">۱</span><b>کفش چرم</b><small>شامل بوت، نیم‌بوت و کفش رسمی</small></li>
+    <li><span class="r">۲</span><b>شیمکس</b><small>سرپایی سبک به سبک کراکس</small></li>
+    <li><span class="r">۳</span><b>کفش پارچه‌ای تنفسی</b><small>راحتی روزمره</small></li>
+    <li><span class="r">۴</span><b>صندل سرپایی</b><small>خانه و سفر</small></li>
+    <li><span class="r">۵</span><b>چکمه</b><small>فصل سرما</small></li>
+    <li><span class="r">۶</span><b>دمپایی</b><small>همه اعضای خانواده</small></li>
+  </ol>
+  <p class="note rv">این هفت محور با یک لایه نگهداشت مشتری (CRM و نجوا) به هم متصل می‌شوند تا هر خرید، آغاز یک رابطه باشد و نه پایان آن. <span class="tag t-r">پیشنهاد</span></p>
 </section>
 
 <!-- ================= SERVICES ================= -->
@@ -505,20 +584,21 @@ aside .logo-slot.has-img img{max-height:30px}
     <table>
       <thead><tr><th>اولویت</th><th>سرویس</th><th>چرا برای شیما</th><th>مرحله قیف</th><th>ظرفیت (مستند)</th></tr></thead>
       <tbody>
-        <tr><td><span class="pri A">A</span></td><td><b>تبلیغات اینفلوئنسری و تعرفه‌ای اینستاگرام</b></td><td>پاسخ مستقیم به تعامل پایین پیج؛ امکان تولید محتوای اختصاصی توسط اینفلوئنسر</td><td>آگاهی ← تعامل</td><td>+۲٬۰۰۰ اینفلوئنسر، +۳٬۰۰۰ پیج؛ بازدیدی ۱٫۵ تا ۳ میلیون بازدید روزانه</td></tr>
-        <tr><td><span class="pri A">A</span></td><td><b>کمپین محصول، ویترین و ریتارگتینگ</b></td><td>نمایش خودکار کفش‌های چرم سایت؛ بازگرداندن کاربرانی که محصول دیده‌اند یا سبد را رها کرده‌اند</td><td>بازدید ← خرید</td><td>اولین مجری ریتارگتینگ در ایران؛ سناریوی سبد خرید رهاشده</td></tr>
-        <tr><td><span class="pri A">A</span></td><td><b>ریتنشن مارکتینگ نجوا (پیامک، پوش، ایمیل)</b></td><td>طراحی جریان CRM و پیشنهاد خرید خانوادگی؛ خرید مجدد</td><td>خرید ← وفاداری</td><td>+۵۰ میلیون مشترک فعال پوش؛ شخصی‌سازی پیامک و UTM</td></tr>
+        <tr><td><span class="pri A">A</span></td><td><b>تبلیغات درون‌اپلیکیشن و روبیکا</b></td><td>پاسخ به اولویت اول شیما، در دو مسیر <b>فروش مستقیم</b> و <b>جذب آنلاین متقاضیان فرانچایز</b>؛ در اپ‌ها و پیام‌رسان‌های پرمخاطب خانوادگی: روبیکا، بادصبا، ایتا، آی‌گپ، سروش‌پلاس و بله</td><td>آگاهی ← خرید / لید</td><td>+۷٬۰۰۰ اپ ایرانی، +۴۰ میلیون کاربر ماهانه؛ روبیکا +۲۵ میلیون کاربر روزانه</td></tr>
+        <tr><td><span class="pri A">A</span></td><td><b>کمپین محصول، ویترین و ریتارگتینگ</b></td><td>نمایش خودکار محصولات سایت به ترتیب اولویت شیما، از کفش چرم تا دمپایی؛ بازگرداندن کاربرانی که محصول دیده‌اند یا سبد را رها کرده‌اند</td><td>بازدید ← خرید</td><td>اولین مجری ریتارگتینگ در ایران؛ سناریوی سبد خرید رهاشده</td></tr>
+        <tr><td><span class="pri A">A</span></td><td><b>ریتنشن مارکتینگ نجوا (پیامک، پوش، ایمیل)</b></td><td>طراحی جریان CRM، پیشنهاد خرید خانوادگی، پیگیری خریداران سازمانی و متقاضیان فرانچایز</td><td>خرید ← وفاداری</td><td>+۵۰ میلیون مشترک فعال پوش؛ شخصی‌سازی پیامک و UTM</td></tr>
+        <tr><td><span class="pri B">B</span></td><td><b>کمپین لید فرانچایز (چاووش)</b></td><td>جمع‌آوری درخواست نمایندگی با پرداخت به ازای هر لید؛ پشتیبان هدف ۵۰ فروشگاه فرانچایز</td><td>آگاهی ← لید</td><td>پرداخت به ازای هر لید؛ اینستاگرام، تلگرام و بله</td></tr>
+        <tr><td><span class="pri B">B</span></td><td><b>تبلیغات بازدیدی اینستاگرام</b></td><td>دیده‌شدن محتوای پیج شیما در فاز فعال‌سازی، بدون همکاری با اینفلوئنسر؛ در فاز دوم، پخش داستان‌های خانواده هوش مصنوعی شیما</td><td>آگاهی ← تعامل</td><td>بازدیدی ۱٫۵ تا ۳ میلیون بازدید روزانه</td></tr>
         <tr><td><span class="pri B">B</span></td><td><b>بیلبورد دیجیتال یکتانت</b></td><td>نمایش انحصاری و موشن‌دار روایت «از چرم تا زیره» در رسانه‌های معتبر؛ جایگزین دیجیتالِ حس بیلبورد شهری و تلویزیون</td><td>آگاهی ← یادآوری برند</td><td>۲۵ میلیون نمایش روزانه در رسانه‌های +A؛ متوسط نمایش ۵ دقیقه</td></tr>
         <tr><td><span class="pri B">B</span></td><td><b>ویدیو: تلوبیون، نماشا، دالفک و ویدیوی وب</b></td><td>پل طبیعی از مخاطب تلویزیون به دیجیتال؛ استفاده از تیزرهای موجود</td><td>آگاهی</td><td>ویدیوی همسان ۳۰ میلیون نمایش روزانه؛ Shoppable Video</td></tr>
-        <tr><td><span class="pri B">B</span></td><td><b>نمایشگرهای محیطی آی‌رسانه</b></td><td>هم‌راستا با رویکرد مجموعه شیما: دیده‌شدن در مسیر «خرید + تفریح» خانواده. اگر انتقال همه شعب به مال‌ها فعلاً ممکن نیست، دو مسیر داریم: تبلیغات در مال‌ها را از همین حالا شروع کنیم، یا صبر کنیم تا شعب منتقل شوند و بعد اجرا کنیم</td><td>آگاهی ← مراجعه</td><td>۵۰۰ نمایشگر در ۱۵ منطقه تهران، شامل مراکز خرید</td></tr>
-        <tr><td><span class="pri B">B</span></td><td><b>تبلیغات درون‌اپلیکیشن و روبیکا</b></td><td>پاسخ به اولویت «حضور در اپلیکیشن‌ها»؛ حضور در اپ‌ها و پیام‌رسان‌های پرمخاطب خانوادگی: <b>روبیکا، بادصبا، ایتا، آی‌گپ، سروش‌پلاس و بله</b></td><td>آگاهی ← بازدید</td><td>+۷٬۰۰۰ اپ ایرانی، +۴۰ میلیون کاربر ماهانه؛ روبیکا +۲۵ میلیون کاربر روزانه</td></tr>
-        <tr><td><span class="pri B">B</span></td><td><b>روابط عمومی و رپورتاژ (تریبون)</b></td><td>روایت زنجیره تولید داخلی، اشتغال‌زایی و انصاف قیمتی؛ تقویت سئو</td><td>اعتماد</td><td>+۲٬۰۰۰ رسانه داخلی، +۱۰٬۰۰۰ رسانه خارجی</td></tr>
-        <tr><td><span class="pri C">C</span></td><td><b>گوگل ادز (فرست‌ادز) و تریدیک</b></td><td>تست بازار عراق، پاکستان و افغانستان؛ هدف‌گیری کاربرانی که منطقه زمانی و IP آن‌ها خارج از ایران است</td><td>آگاهی ← لید صادراتی</td><td>پارتنر رسمی گوگل؛ هدف‌گیری بر اساس موقعیت مکانی</td></tr>
-        <tr><td><span class="pri C">C</span></td><td><b>یکتا استودیو (تولید محتوا)</b></td><td>گزینه مکمل برای تولید محتوای Real در پیج اینستاگرام کفش شیما</td><td>پشتیبان همه مراحل</td><td>تیم داخلی تولید محتوا و تیزر یکتانت</td></tr>
+        <tr><td><span class="pri B">B</span></td><td><b>نمایشگرهای محیطی آی‌رسانه</b></td><td>فقط در مال‌هایی که شیما در آن‌ها شعبه دارد، نه در همه مال‌ها و فروشگاه‌های شبکه آی‌رسانه. با افتتاح شعب جدید در مال‌ها، همان مال‌ها به برنامه اضافه می‌شوند</td><td>آگاهی ← مراجعه</td><td>پخش ویدیو در مراکز خرید؛ موجودی نمایشگر هر مال پیش از اجرا استعلام می‌شود</td></tr>
+        <tr><td><span class="pri B">B</span></td><td><b>گوگل ادز (فرست‌ادز) و تریدیک</b></td><td>کاتالوگ سه‌زبانه به‌عنوان مقصد همه کمپین‌های صادراتی؛ هدف‌گیری کاربران عراق و افغانستان بر اساس منطقه زمانی و IP</td><td>آگاهی ← لید صادراتی</td><td>پارتنر رسمی گوگل؛ هدف‌گیری بر اساس موقعیت مکانی</td></tr>
+        <tr><td><span class="pri B">B</span></td><td><b>روابط عمومی و رپورتاژ (تریبون)</b></td><td>روایت زنجیره تولید داخلی، اشتغال‌زایی، کمپین‌های اجتماعی و انصاف قیمتی؛ تقویت سئو</td><td>اعتماد</td><td>+۲٬۰۰۰ رسانه داخلی، +۱۰٬۰۰۰ رسانه خارجی</td></tr>
+        <tr><td><span class="pri C">C</span></td><td><b>شبکه‌های بومی روسیه و CIS</b></td><td>VK، یاندکس و تلگرام؛ کانال‌هایی که مخاطب این بازارها واقعاً در آن‌هاست</td><td>آگاهی ← لید صادراتی</td><td>اجرا از طریق پارتنر محلی؛ نیازمند هماهنگی</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note rv">آگاهانه کنار گذاشته شد: پادکست، لینکدین و تبلیغات پیامکی انبوه در فاز اول؛ این‌ها به مسئله اصلی شیما در این مرحله پاسخ مستقیم نمی‌دهند. <span class="tag t-r">پیشنهاد</span></p>
+  <p class="note rv">آگاهانه کنار گذاشته شد: همکاری با اینفلوئنسرهای انسانی (شیما خانواده هوش مصنوعی خودش را می‌سازد)، برون‌سپاری تولید محتوا (تولید در روابط عمومی شیما انجام می‌شود)، پادکست، لینکدین و تبلیغات پیامکی انبوه. <span class="tag t-v">مستند · جلسه</span></p>
 </section>
 
 <!-- ================= BILLBOARD ================= -->
@@ -574,43 +654,54 @@ aside .logo-slot.has-img img{max-height:30px}
           <div class="mock-art"><div class="ln"></div><div class="ln w80"></div><div class="ln w60"></div><div class="ln"></div><div class="ln w90"></div><div class="ln w70"></div><div class="ln"></div><div class="ln w60"></div></div>
         </div>
       </div>
-      <p class="note" style="margin-top:12px">این طرح فقط یک ایده اولیه است. نسخه نهایی را تیم خلاقیت یکتانت با عکس‌های واقعی محصول و پس از تأیید برند طراحی می‌کند. <span class="tag t-r">پیشنهاد</span></p>
+      <p class="note" style="margin-top:12px">این طرح فقط یک ایده اولیه است. نسخه نهایی بر اساس عکس‌های واقعی محصول و محتوای تیم شیما ساخته می‌شود و پیش از اجرا به تأیید برند می‌رسد. <span class="tag t-r">پیشنهاد</span></p>
     </div>
   </div>
 </section>
 
 <!-- ================= CONTENT ================= -->
 <section id="content">
-  <div class="eyebrow rv">۰۸ · اینستاگرام، UGC و محتوا</div>
-  <h2 class="rv">از پیج یک‌طرفه به گفتگوی دوسویه با خانواده‌ها</h2>
-  <div class="grid g3" style="margin-top:22px">
-    <div class="card rv"><div class="ic">★</div><h3>اینفلوئنسرهای خانوادگی</h3><p class="muted">انتخاب پیج‌ها با ابزار تحلیلی سنجاب بر اساس نرخ تعامل، جنسیت مخاطب و سابقه تبلیغات؛ اولویت با چهره‌های خانوادگی، مذهبی‌دوست و سبک زندگی معتدل. <span class="tag t-v">مستند · قابلیت</span></p></div>
-    <div class="card rv d1"><div class="ic">✎</div><h3>برنامه سازندگان جوان شیما</h3><p class="muted">ده‌ها سازنده محتوای جوان، با دستمزد منصفانه، تجربه واقعی خود از کفش شیما را روایت می‌کنند. هم محتوای اصیل برای پیج، هم ترجمه عملی ارزش «فرصت دادن به جوانان». <span class="tag t-r">پیشنهاد</span></p></div>
-    <div class="card rv d2"><div class="ic">❖</div><h3>چالش «#خانواده_شیما»</h3><p class="muted">مشتریان عکس کفش‌های خانوادگی‌شان را منتشر می‌کنند؛ منتخب‌ها در پیج بازنشر می‌شوند و کد تخفیف خانوادگی می‌گیرند. محتوای ارسالی خوراک UGC تبلیغات هم می‌شود. <span class="tag t-r">پیشنهاد</span></p></div>
+  <div class="eyebrow rv">۰۸ · اینستاگرام و محتوا</div>
+  <h2 class="rv">اینستاگرام در دو فاز: اول فعال‌سازی، بعد قصه‌گویی با خانواده شیما</h2>
+  <p class="lead rv d1">فعلاً برنامه همکاری با اینفلوئنسر نداریم. شیما در حال طراحی خانواده‌ای چهارنفره با هوش مصنوعی است و همین خانواده، چهره و قصه‌گوی کمپین‌ها می‌شود. <span class="tag t-v">مستند · جلسه</span></p>
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card phase rv"><span class="badge">فاز ۱ · حدود ۲ ماه، آذر و دی</span><h3>فعال‌سازی پیج، بدون اینفلوئنسر</h3><ul class="ls">
+      <li>تقویم محتوای مناسبتی: روز مادر، یلدا و روز پدر</li>
+      <li>معرفی دسته‌ها به ترتیب اولویت فروش؛ از کفش چرم تا دمپایی</li>
+      <li>روایت کارکنان و خط تولید چرم و زیره</li>
+      <li>چالش «#خانواده_شیما» با محتوای واقعی مشتریان</li>
+      <li>تبلیغات بازدیدی برای رساندن پست‌ها به مخاطب جدید</li></ul></div>
+    <div class="card phase p2 rv d1"><span class="badge">فاز ۲ · بهمن و اسفند</span><h3>رشد با اینفلوئنسرهای هوش مصنوعی</h3>
+      <div class="ai-fam"><div><span>👨</span>پدر</div><div><span>👩</span>مادر</div><div><span>👧</span>دختر</div><div><span>👦</span>پسر</div></div>
+      <ul class="ls">
+      <li>داستان‌های دنباله‌دار از لحظه‌های یک خانواده؛ هر قسمت با یک محصول شیما</li>
+      <li>پخش قسمت‌ها در اینستاگرام، اپ‌ها، ویدیوی همسان و بیلبورد دیجیتال</li>
+      <li>اوج روایت در کمپین پیش‌نوروز</li></ul>
+      <p class="muted" style="font-size:13px;margin-top:8px">شخصیت‌ها را تیم شیما طراحی می‌کند. نقش یکتانت: انتخاب کانال، زمان‌بندی پخش و سنجش اثر هر قسمت. <span class="tag t-r">پیشنهاد</span></p></div>
   </div>
-  <div class="grid g2" style="margin-top:18px">
-    <div class="card rv">
-      <h3>هم‌افزایی با سریال خانواده چهارنفره</h3>
-      <p class="muted">شخصیت‌های خانواده‌ای که برای سریال محتوایی طراحی شده‌اند می‌توانند چهره کمپین «خرید خانوادگی» باشند. پیشنهاد ما: قسمت‌ها با تبلیغات بازدیدی اینستاگرام و ویدیوی همسان وب دیده شوند و یک قسمت «پشت صحنه تولید چرم و زیره» در کارخانه ساخته شود تا داستان، واقعی هم باشد. <span class="tag t-r">پیشنهاد</span></p>
-    </div>
-    <div class="card rv d1">
-      <h3>گزینه جایگزین تولید محتوا</h3>
-      <p class="muted">در صورتی که قرارداد محتوایی دوماهه فعلی پس از ارزیابی تمدید نشود، یکتا استودیو می‌تواند تولید تیزر و محتوای پیج را با هزینه شفاف بر عهده بگیرد. هزینه تولید جداگانه برآورد می‌شود و داخل بودجه رسانه نیست. <span class="tag t-r">پیشنهاد</span></p>
+  <div class="card rv" style="margin-top:18px">
+    <h3>هماهنگی با تیم تولید محتوای شیما <span class="tag t-v">مستند · جلسه</span></h3>
+    <p class="muted">تولید محتوا در روابط عمومی شیما و با هوش مصنوعی انجام می‌شود (قرارداد فعلی تا اردیبهشت ۱۴۰۶) و برون‌سپاری نمی‌شود. یکتانت محتوا تولید نمی‌کند و برای اینکه محتوای کمپین‌ها هماهنگ پیش برود، این موارد را در اختیار همان تیم می‌گذارد:</p>
+    <div class="grid g4" style="margin-top:12px">
+      <div class="mini"><b>بریف ماهانه</b>برای هر کمپین و مناسبت، دو هفته پیش از اجرا</div>
+      <div class="mini"><b>مشخصات فنی</b>ابعاد و فرمت هر جایگاه تبلیغاتی</div>
+      <div class="mini"><b>گزارش عملکرد</b>نتیجه هر محتوا برای تصمیم درباره محتوای بعدی</div>
+      <div class="mini"><b>جلسه دوهفته‌ای</b>هماهنگی مستمر با تیم محتوای شیما</div>
     </div>
   </div>
 </section>
 
 <!-- ================= CRM ================= -->
 <section id="crm">
-  <div class="eyebrow rv">۰۹ · CRM، نجوا و خرید خانوادگی</div>
+  <div class="eyebrow rv">۰۹ · CRM، خرید خانوادگی و کمپین اجتماعی</div>
   <h2 class="rv">هر خرید، شروع یک رابطه؛ جریان پیام‌ها را یکتانت طراحی می‌کند</h2>
   <p class="lead rv d1">پیامک داینامیک، پوش و ایمیل نجوا بر اساس رفتار هر مشتری ارسال می‌شود: چه زمانی، چه پیشنهادی، برای چه کسی. <span class="tag t-v">مستند · خواسته برند</span></p>
   <div class="flow">
     <div class="step rv"><span class="d">روز ۰</span><h4>خوش‌آمد و تأیید خرید</h4><p>تشکر، معرفی ضمانت و راهنمای سایز</p></div>
-    <div class="step rv d1"><span class="d">روز ۷</span><h4>راهنمای نگهداری چرم</h4><p>محتوای کاربردی؛ بدون فروش مستقیم</p></div>
+    <div class="step rv d1"><span class="d">روز ۷</span><h4>راهنمای نگهداری</h4><p>محتوای کاربردی؛ بدون فروش مستقیم</p></div>
     <div class="step rv d2"><span class="d">روز ۱۴</span><h4>دعوت به UGC</h4><p>«عکس کفشت را با #خانواده_شیما بفرست»</p></div>
     <div class="step rv d3"><span class="d">روز ۳۰</span><h4>پیشنهاد خانوادگی</h4><p>کد تخفیف پلکانی برای سایر اعضای خانواده</p></div>
-    <div class="step rv d4"><span class="d">مناسبتی</span><h4>فصل و مناسبت</h4><p>پوتین زمستانی، یلدا، پیش‌نوروز، بازگشایی مدارس</p></div>
+    <div class="step rv d4"><span class="d">مناسبتی</span><h4>فصل و مناسبت</h4><p>روز مادر، یلدا، روز پدر، چکمه زمستانی، پیش‌نوروز</p></div>
   </div>
   <div class="grid g3" style="margin-top:18px">
     <div class="card rv"><h3>سبد خرید رهاشده</h3><p class="muted">یادآوری پوش و پیامک، هم‌زمان با ریتارگتینگ وب</p></div>
@@ -618,121 +709,170 @@ aside .logo-slot.has-img img{max-height:30px}
     <div class="card rv d2"><h3>مراجعه‌کننده شعبه</h3><p class="muted">ثبت شماره در شعب و اتصال خرید حضوری به CRM</p></div>
   </div>
 
-  <h3 class="rv" style="margin-top:40px">تولید محتوای واقعی: از مشتری تا خط تولید <span class="tag t-r">پیشنهاد</span></h3>
-  <div class="grid g2" style="margin-top:14px">
-    <div class="card rv"><div class="ic">✦</div><h3>UGC مشتریان شیما</h3><p class="muted">مشتریانی که محصول شیما خریده‌اند، با همان کفش محتوا تولید می‌کنند و در ازای آن کد تخفیف بیشتری برای خرید بعدی می‌گیرند. محتوای اصیل برای پیج، و یک چرخه خرید مجدد برای CRM.</p></div>
-    <div class="card rv d1"><div class="ic">⚒</div><h3>روایت کارکنان و کارگران خط تولید</h3><p class="muted">محتوای رئال از کارمندان و کارگرانی که در خطوط تولید چرم و زیره شیما فعال‌اند. مخاطب می‌بیند که با خرید شیما، از اشتغال جوانان و افرادی که در خط تولید کار می‌کنند حمایت می‌کند.</p></div>
-  </div>
-
   <h3 class="rv" style="margin-top:40px">پیشنهاد «خرید خانوادگی» <span class="tag t-r">پیشنهاد</span></h3>
   <p class="muted rv">ساختار پلکانی؛ درصد تخفیف هر پله را شیما تعیین می‌کند.</p>
   <div class="family">
     <div class="fam rv"><div class="people">👤👤</div><h4>زوج</h4><p>خرید دو جفت در یک سفارش، پله اول تخفیف</p></div>
     <div class="fam rv d1"><div class="people">👤👤👤</div><h4>خانواده سه‌نفره</h4><p>پله دوم تخفیف و ارسال رایگان</p></div>
-    <div class="fam rv d2"><div class="people">👤👤👤👤</div><h4>خانواده چهارنفره و بیشتر</h4><p>بیشترین تخفیف و هدیه نگهداری چرم با نشان شیما</p></div>
+    <div class="fam rv d2"><div class="people">👤👤👤👤</div><h4>خانواده چهارنفره و بیشتر</h4><p>بیشترین تخفیف و هدیه نگهداری با نشان شیما</p></div>
+  </div>
+
+  <h3 class="rv" style="margin-top:40px">از خرید خانوادگی تا کمپین اجتماعی <span class="tag t-v">مستند · خواسته برند</span></h3>
+  <p class="muted rv">منطق خرید خانوادگی به خرید جمعی و سازمانی گسترش پیدا می‌کند. نتیجه، یک کانال فروش تازه است و روایتی که با ارزش‌های بنیان‌گذار شیما هم‌خوانی دارد.</p>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card rv"><div class="ic">🏫</div><h3>مدارس</h3><p class="muted">خرید گروهی کفش برای دانش‌آموزان با قیمت سازمانی؛ پیشنهاد ویژه برای انجمن‌های اولیا و مربیان. <span class="tag t-r">پیشنهاد</span></p></div>
+    <div class="card rv d1"><div class="ic">🏢</div><h3>سازمان‌ها و شرکت‌ها</h3><p class="muted">هدیه و رفاه کارکنان؛ کد خرید خانوادگی اختصاصی برای خانواده کارکنان هر سازمان. <span class="tag t-r">پیشنهاد</span></p></div>
+    <div class="card rv d2"><div class="ic">🤝</div><h3>«یک جفت برای تو، یک جفت برای یک دانش‌آموز»</h3><p class="muted">بخشی از هر خرید سازمانی به کفش دانش‌آموزان مناطق کم‌برخوردار تبدیل می‌شود و در پیج و رپورتاژ روایت می‌شود. <span class="tag t-r">پیشنهاد</span></p></div>
+  </div>
+  <p class="note rv">نقش یکتانت: معرفی کمپین در اپ‌ها، رپورتاژ تریبون، جذب لید خریدار سازمانی و پیگیری آن‌ها با نجوا. <span class="tag t-r">پیشنهاد</span></p>
+
+  <h3 class="rv" style="margin-top:40px">محتوای واقعی از مشتری تا خط تولید <span class="tag t-r">پیشنهاد</span></h3>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card rv"><div class="ic">✦</div><h3>UGC مشتریان شیما</h3><p class="muted">مشتریانی که محصول شیما خریده‌اند با همان محصول محتوا تولید می‌کنند و در ازای آن کد تخفیف بیشتری برای خرید بعدی می‌گیرند. محتوای اصیل برای پیج، و یک چرخه خرید مجدد برای CRM.</p></div>
+    <div class="card rv d1"><div class="ic">⚒</div><h3>روایت کارکنان و کارگران خط تولید</h3><p class="muted">محتوای واقعی از کارمندان و کارگرانی که در خطوط تولید چرم و زیره شیما کار می‌کنند. مخاطب می‌بیند که با خرید شیما، از اشتغال جوانان حمایت می‌کند. این محتوا را تیم محتوای شیما تولید می‌کند.</p></div>
   </div>
 </section>
 
 <!-- ================= MALL ================= -->
 <section id="mall">
-  <div class="eyebrow rv">۱۰ · حضور در مال‌ها</div>
+  <div class="eyebrow rv">۱۰ · حضور در مال‌های شیما</div>
   <div class="grid g2" style="align-items:center;gap:34px">
     <div>
-      <h2 class="rv">جایی که خانواده‌ها برای تفریح می‌روند، شیما هم دیده شود</h2>
-      <p class="lead rv d1">رویکرد برند شیما این است که خرید با تفریح ترکیب شده و شعب باید به مال‌ها نزدیک شوند. نمایشگرهای آی‌رسانه در مراکز خرید، این ایده را پیش از افتتاح شعب جدید هم قابل آزمایش می‌کند. <span class="tag t-v">مستند · جلسه</span></p>
+      <h2 class="rv">تبلیغ فقط در مال‌هایی که شیما همان‌جاست</h2>
+      <p class="lead rv d1">به خواست شیما، تبلیغات محیطی فقط در مال‌هایی اجرا می‌شود که شیما در آن‌ها فروشگاه دارد، نه در همه مال‌ها و فروشگاه‌های شبکه آی‌رسانه. بیننده تبلیغ چند قدم با شعبه فاصله دارد و مسیر دیدن تا خریدن کوتاه است. <span class="tag t-v">مستند · جلسه</span></p>
       <ul class="rv d2" style="list-style:none;margin-top:14px;font-size:14.5px">
-        <li>• شیما هم‌اکنون در ایران‌مال، اطلس‌مال و روماک‌مال تهران شعبه دارد؛ نقطه شروع طبیعی برای تست <span class="tag t-v">مستند · سایت شیما</span></li>
-        <li>• پخش ویدیو در نمایشگرهای مراکز خرید منتخب <span class="tag t-v">مستند · قابلیت</span></li>
-        <li>• اولویت با مال‌های نزدیک شعب فعلی یا محل شعب آینده <span class="tag t-r">پیشنهاد</span></li>
-        <li>• شروع از همین حالا، یا هم‌زمان با انتقال شعب به مال‌ها <span class="tag t-r">پیشنهاد</span></li>
+        <li>• شعب فعلی شیما در مال‌ها: ایران‌مال، اطلس‌مال و روماک‌مال تهران؛ فهرست نهایی را تیم شیما تأیید می‌کند <span class="tag t-v">مستند · سایت شیما</span></li>
+        <li>• پخش ویدیو در نمایشگرهای همان مال‌ها <span class="tag t-v">مستند · قابلیت</span></li>
+        <li>• پیام هر نمایشگر به شعبه همان مال اشاره می‌کند: «شیما، همین‌جا، طبقه ...» <span class="tag t-r">پیشنهاد</span></li>
+        <li>• موجودی نمایشگر در هر مال، پیش از اجرا از آی‌رسانه استعلام می‌شود <span class="tag t-i">برداشت</span></li>
+        <li>• هر فروشگاه جدید شیما در مال، هم‌زمان با افتتاح به برنامه اضافه می‌شود <span class="tag t-r">پیشنهاد</span></li>
         <li>• گزارش تعداد پخش و برآورد بازدید پس از کمپین <span class="tag t-v">مستند</span></li>
       </ul>
     </div>
     <div class="img-slot rv d2" data-img="store" data-label="شیما؛ همراه خانواده در مسیر هر روز" data-art="store" style="aspect-ratio:4/3;border-radius:22px"></div>
   </div>
   <div class="stats">
-    <div class="stat rv"><div class="n" data-count="500">۰</div><div class="l">نمایشگر محیطی</div></div>
-    <div class="stat rv d1"><div class="n" data-count="15">۰</div><div class="l">منطقه تهران</div></div>
+    <div class="stat rv"><div class="n" data-count="3">۰</div><div class="l">مال دارای شعبه شیما (فعلی)</div></div>
+    <div class="stat rv d1"><div class="n">چند قدم</div><div class="l">فاصله تبلیغ تا فروشگاه</div></div>
     <div class="stat rv d2"><div class="n">ویدیو</div><div class="l">فرمت پخش</div></div>
     <div class="stat rv d3"><div class="n">گزارش</div><div class="l">پخش و بازدید تخمینی</div></div>
   </div>
 </section>
 
+<!-- ================= NETWORK ================= -->
+<section id="network">
+  <div class="eyebrow rv">۱۱ · توسعه شبکه فروشگاهی</div>
+  <h2 class="rv">سه هدف شیما تا پایان ۱۴۰۶؛ دیجیتال، موتور جذب مشتری و شریک</h2>
+  <p class="lead rv d1">شیما برای پایان سال ۱۴۰۶ سه هدف مشخص دارد. کمپین‌های این پروپوزال طوری طراحی شده‌اند که علاوه بر فروش، به هر سه هدف هم کمک کنند. <span class="tag t-v">مستند · جلسه</span></p>
+  <div class="goals">
+    <div class="goal rv"><h3>فروشگاه شرکتی</h3><div class="fromto"><span class="from">۳۸</span><span class="arr">←</span><span class="to">۵۰</span></div><div class="gbar"><i data-w="76"></i></div><small>امروز ۳۸ فروشگاه؛ ۱۲ فروشگاه جدید</small></div>
+    <div class="goal rv d1"><h3>فرانچایز در ایران</h3><div class="fromto"><span class="from">۱</span><span class="arr">←</span><span class="to">۵۰</span></div><div class="gbar"><i data-w="2"></i></div><small>امروز ۱ فروشگاه؛ ۴۹ شریک جدید</small></div>
+    <div class="goal rv d2"><h3>فرانچایز خارج از ایران</h3><div class="fromto"><span class="from">۰</span><span class="arr">←</span><span class="to">۱۰</span></div><div class="gbar"><i data-w="0"></i></div><small>دست‌کم ۱۰ فروشگاه در کشورهای هدف</small></div>
+  </div>
+  <h3 class="rv" style="margin-top:36px">نقش دیجیتال در هر هدف <span class="tag t-r">پیشنهاد</span></h3>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card rv"><div class="ic">◉</div><h3>کمپین افتتاح فروشگاه شرکتی</h3><p class="muted">برای هر فروشگاه جدید: تبلیغ با هدف‌گیری جغرافیایی در اپ‌ها و وب، پیام «شیما به محله شما آمد» و نمایشگر آی‌رسانه اگر فروشگاه در مال باشد.</p></div>
+    <div class="card rv d1"><div class="ic">⇢</div><h3>قیف فرانچایز داخلی</h3><p class="muted">صفحه «اخذ نمایندگی» روی سایت شیما ← تبلیغ در اپ‌ها و کمپین لید چاووش ← فرم درخواست ← پیگیری خودکار با پیامک و ایمیل نجوا ← جلسه با تیم توسعه شیما.</p></div>
+    <div class="card rv d2"><div class="ic">✈</div><h3>فرانچایز خارجی</h3><p class="muted">کاتالوگ سه‌زبانه و صفحه همکاری بین‌المللی؛ تبلیغ در گوگل و شبکه‌های بومی هر کشور با هدف جذب لید نمایندگی، عمده‌فروشی و فرانچایز.</p></div>
+  </div>
+  <p class="note rv">شاخص‌های این بخش: تعداد لید فرانچایز، نرخ تبدیل لید به جلسه، و هزینه هر لید واجد شرایط. <span class="tag t-r">پیشنهاد</span></p>
+</section>
+
 <!-- ================= EXPORT ================= -->
 <section id="export">
-  <div class="eyebrow rv">۱۱ · صادرات</div>
-  <h2 class="rv">عراق، پاکستان، افغانستان: اول یادگیری، بعد سرمایه‌گذاری</h2>
-  <p class="lead rv d1">پیشنهاد ما یک «تست بازار» کم‌هزینه است تا پیش از تصمیم‌های بزرگ صادراتی، داده واقعی از تقاضا در هر کشور به دست آید. <span class="tag t-r">پیشنهاد</span></p>
-  <div class="grid g3" style="margin-top:22px">
-    <div class="card rv"><h3>🇮🇶 عراق</h3><p class="muted">جست‌وجوی گوگل و یوتیوب به عربی؛ پیام «چرم طبیعی، قیمت منصفانه»؛ مناسب مخاطب عمده‌فروش و خرده‌فروش</p></div>
-    <div class="card rv d1"><h3>🇦🇫 افغانستان</h3><p class="muted">محتوای فارسی/دری؛ نزدیکی زبانی امکان استفاده از همان خلاقیت‌ها را می‌دهد</p></div>
-    <div class="card rv d2"><h3>🇵🇰 پاکستان</h3><p class="muted">پیام به انگلیسی/اردو؛ تمرکز بر تولیدکنندگی و همکاری B2B با نمایندگی‌ها</p></div>
+  <div class="eyebrow rv">۱۲ · صادرات</div>
+  <h2 class="rv">اول کاتالوگ سه‌زبانه؛ بعد عراق، افغانستان، روسیه و CIS</h2>
+  <p class="lead rv d1">به گفته شیما، اولویت اول صادرات یک کاتالوگ دیجیتال روی سایت شیماست که محصولات را به فارسی، عربی و انگلیسی معرفی کند. همه کمپین‌های صادراتی به همین کاتالوگ می‌رسند. <span class="tag t-v">مستند · جلسه</span></p>
+  <div class="card catalog rv d1" style="margin-top:22px">
+    <h3>کاتالوگ دیجیتال شیما</h3>
+    <div class="langs"><span>فارسی</span><span>العربية</span><span>English</span></div>
+    <div class="grid g2" style="margin-top:8px">
+      <ul class="ls">
+        <li>صفحه هر محصول با عکس، جنس، رنگ‌ها و جدول سایز (ایرانی و اروپایی)</li>
+        <li>فرم درخواست نمایندگی، عمده‌فروشی و فرانچایز در هر زبان</li></ul>
+      <ul class="ls">
+        <li>نسخه PDF قابل‌ارسال در واتس‌اپ و تلگرام برای خریدار عمده</li>
+        <li>نصب اسکریپت یکتانت و UTM برای سنجش بازدید از هر کشور</li></ul>
+    </div>
+    <p class="muted" style="font-size:13px;margin-top:10px">ساختار و مسیر تبدیل را یکتانت پیشنهاد می‌دهد؛ پیاده‌سازی روی سایت شیما با تیم فنی شیماست. برای روسیه و CIS، نسخه روسی کاتالوگ در مرحله بعد پیشنهاد می‌شود. <span class="tag t-r">پیشنهاد</span></p>
   </div>
-  <div class="note rv">ابزار: گوگل ادز از طریق فرست‌ادز (جست‌وجو، نمایشی، یوتیوب) و تریدیک، با سنجش منطقه زمانی و IP کاربران برای هدف‌گیری مخاطبانی که خارج از ایران هستند، به‌علاوه رپورتاژ در رسانه‌های خارجی تریبون. هدف فاز اول دریافت لید نمایندگی و عمده‌فروشی است، نه فروش آنلاین مستقیم. پیش‌نیاز: صفحه فرود چندزبانه و فرم ثبت درخواست همکاری. <span class="tag t-i">برداشت</span></div>
+
+  <h3 class="rv" style="margin-top:34px">کشورهای هدف به ترتیب اولویت، با شبکه‌ها و اپ‌های هر کشور</h3>
+  <div class="tbl-wrap rv d1">
+    <table>
+      <thead><tr><th>اولویت</th><th>کشور</th><th>زبان پیام</th><th>شبکه‌ها و اپ‌های اصلی</th><th>مسیر اجرا</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pri A">۱</span></td><td><b>🇮🇶 عراق</b></td><td>عربی؛ کردی در اقلیم کردستان</td><td>فیسبوک، اینستاگرام، تیک‌تاک و یوتیوب</td><td>گوگل ادز (فرست‌ادز) و تریدیک؛ شبکه‌های اجتماعی از طریق پارتنر محلی</td></tr>
+        <tr><td><span class="pri A">۲</span></td><td><b>🇦🇫 افغانستان</b></td><td>فارسی/دری و پشتو</td><td>فیسبوک، واتس‌اپ، تیک‌تاک و یوتیوب</td><td>گوگل ادز و تریدیک؛ استفاده از همان خلاقیت‌های فارسی</td></tr>
+        <tr><td><span class="pri B">۳</span></td><td><b>🇷🇺 روسیه</b></td><td>روسی</td><td>VK، تلگرام و یاندکس؛ مارکت‌پلیس‌های Wildberries و Ozon</td><td>یاندکس دایرکت، VK Ads و Telegram Ads از طریق پارتنر محلی</td></tr>
+        <tr><td><span class="pri B">۴</span></td><td><b>کشورهای CIS</b></td><td>روسی و زبان‌های محلی؛ تاجیکی (فارسی) برای تاجیکستان</td><td>تلگرام، اینستاگرام، VK و یاندکس؛ وزن هر شبکه در هر کشور متفاوت است</td><td>پارتنر محلی؛ پس از تست بازار روسیه</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note rv">چینش کانال‌های هر کشور بر اساس داده‌های عمومی است و پیش از اجرا با پارتنر محلی و تیم صادرات شیما نهایی می‌شود. هدف فاز اول جذب لید نمایندگی، عمده‌فروشی و فرانچایز است، نه فروش آنلاین مستقیم. <span class="tag t-i">برداشت</span></p>
 </section>
 
 <!-- ================= BUDGET ================= -->
 <section id="budget">
-  <div class="eyebrow rv">۱۲ · سناریوهای بودجه</div>
-  <h2 class="rv">سه سناریو برای یک فاز ۶ هفته‌ای</h2>
-  <p class="lead rv d1">ارقام به میلیون تومان و فقط هزینه رسانه است؛ هر سه سناریو هر شش محور را پوشش می‌دهند. تولید محتوا جداگانه برآورد می‌شود. تقسیم‌ها پیشنهادی‌اند و پس از هفته دوم بر اساس داده بازتوزیع می‌شوند.</p>
+  <div class="eyebrow rv">۱۳ · سناریوهای بودجه</div>
+  <h2 class="rv">سه سناریو برای ۴ ماه تا نوروز، چیده‌شده بر اساس مناسبت‌ها</h2>
+  <p class="lead rv d1">ارقام به میلیون تومان و فقط هزینه رسانه است؛ تولید محتوا با تیم شیماست و در این ارقام نیست. هر سناریو کل دوره آذر تا اسفند ۱۴۰۵ را پوشش می‌دهد و هر ماه بر اساس مناسبت‌هایش وزن گرفته است. تقسیم‌ها پیشنهادی‌اند و هر ماه بر اساس داده بازتوزیع می‌شوند.</p>
   <div class="tabs rv d2" id="tabs">
-    <button class="tab" data-s="0"><small>محافظه‌کارانه · تست کم‌ریسک</small><b>۸۰۰</b></button>
-    <button class="tab on" data-s="1"><small>پیشنهادی <span class="rec">توصیه ما</span></small><b>۱٬۲۰۰</b></button>
-    <button class="tab" data-s="2"><small>رشد · توسعه و مقیاس</small><b>۲٬۵۰۰</b></button>
+    <button class="tab" data-s="0"><small>محافظه‌کارانه · تست کم‌ریسک</small><b>۲٬۴۰۰</b></button>
+    <button class="tab on" data-s="1"><small>پیشنهادی <span class="rec">توصیه ما</span></small><b>۳٬۶۰۰</b></button>
+    <button class="tab" data-s="2"><small>رشد · توسعه و مقیاس</small><b>۷٬۵۰۰</b></button>
   </div>
   <div class="budget">
     <div class="card rv"><div class="alloc" id="alloc"></div></div>
     <div class="card rv d1 donut-box">
-      <div class="donut" id="donut"><div class="c"><div><b id="dTotal">۱٬۲۰۰</b>میلیون تومان</div></div></div>
+      <div class="donut" id="donut"><div class="c"><div><b id="dTotal">۳٬۶۰۰</b>میلیون تومان · ۴ ماه</div></div></div>
       <dl class="sc-info" id="scInfo"></dl>
     </div>
   </div>
+  <h3 class="rv" style="margin-top:34px">تقسیم ماهانه بر اساس مناسبت‌ها <span class="tag t-r">پیشنهاد</span></h3>
+  <div class="months" id="months"></div>
+  <p class="muted rv" style="font-size:12.5px;margin-top:10px">تاریخ مناسبت‌های قمری (روز پدر، نیمه شعبان، رمضان و عید فطر) تقریبی است و با تقویم رسمی نهایی می‌شود.</p>
 </section>
 
 <!-- ================= KPI ================= -->
 <section id="kpi">
-  <div class="eyebrow rv">۱۳ · KPI و اندازه‌گیری</div>
-  <h2 class="rv">هر ریال قابل ردیابی؛ از نمایش تا خرید مجدد</h2>
+  <div class="eyebrow rv">۱۴ · KPI و اندازه‌گیری</div>
+  <h2 class="rv">هر ریال قابل ردیابی؛ از نمایش تا خرید مجدد و لید فرانچایز</h2>
   <p class="lead rv d1">اهداف عددی هر شاخص پس از هفته اول و بر اساس داده پایه همین کمپین تعیین می‌شود؛ پیش از آن هیچ عددی به‌عنوان تعهد اعلام نمی‌کنیم.</p>
   <div class="kpi">
-    <div class="card rv"><h3>آگاهی</h3><ul><li>Reach و Impression</li><li>نرخ مشاهده ویدیو</li><li>جست‌وجوی نام برند</li></ul></div>
-    <div class="card rv d1"><h3>تعامل اینستاگرام</h3><ul><li>نرخ تعامل پیج قبل/بعد</li><li>رشد فالوور</li><li>تعداد محتوای UGC</li></ul></div>
-    <div class="card rv d2"><h3>ترافیک و فروش</h3><ul><li>CTR و هزینه هر بازدید</li><li>افزودن به سبد</li><li>سفارش و ارزش سفارش از هر کانال</li></ul></div>
-    <div class="card rv d3"><h3>وفاداری</h3><ul><li>نرخ خرید مجدد</li><li>سفارش‌های خانوادگی</li><li>استفاده از کدهای تخفیف CRM</li></ul></div>
+    <div class="card rv"><h3>آگاهی</h3><ul><li>Reach و Impression</li><li>نرخ مشاهده ویدیو</li><li>جست‌وجوی نام برند</li><li>آگاهی از برند قبل و بعد</li></ul></div>
+    <div class="card rv d1"><h3>اپ‌ها و فروش</h3><ul><li>CTR و هزینه هر بازدید از اپ‌ها</li><li>سفارش به تفکیک دسته محصول</li><li>ارزش سفارش از هر کانال</li></ul></div>
+    <div class="card rv d2"><h3>اینستاگرام و وفاداری</h3><ul><li>نرخ تعامل پیج در هر فاز</li><li>نرخ خرید مجدد</li><li>سفارش‌های خانوادگی و سازمانی</li></ul></div>
+    <div class="card rv d3"><h3>شبکه فروش و صادرات</h3><ul><li>لید فرانچایز داخلی و خارجی</li><li>بازدید کاتالوگ به تفکیک زبان و کشور</li><li>لید نمایندگی و عمده‌فروشی</li></ul></div>
   </div>
   <div class="grid g3" style="margin-top:18px">
-    <div class="card rv"><h3>پیش‌نیاز ردیابی</h3><p class="muted">نصب اسکریپت یکتانت، UTM برای هر کانال، اتصال رویدادهای سبد و خرید سایت</p></div>
-    <div class="card rv d1"><h3>کدهای تخفیف اختصاصی</h3><p class="muted">کد جدا برای اینفلوئنسرها و CRM؛ سنجش دقیق سهم هر کانال در فروش</p></div>
+    <div class="card rv"><h3>پیش‌نیاز ردیابی</h3><p class="muted">نصب اسکریپت یکتانت، UTM برای هر کانال، اتصال رویدادهای سبد، خرید و فرم‌های فرانچایز سایت</p></div>
+    <div class="card rv d1"><h3>کدهای تخفیف اختصاصی</h3><p class="muted">کد جدا برای CRM، خرید خانوادگی و هر سازمان؛ سنجش دقیق سهم هر کانال در فروش</p></div>
     <div class="card rv d2"><h3>گزارش‌دهی</h3><p class="muted">پنل لحظه‌ای یکتانت، گزارش هفتگی و جلسه بهینه‌سازی دوهفته‌ای</p></div>
   </div>
 </section>
 
 <!-- ================= TIMELINE ================= -->
 <section id="timeline">
-  <div class="eyebrow rv">۱۴ · زمان‌بندی</div>
-  <h2 class="rv">فاز اول: ۶ هفته، شروع پیش از فصل سرما</h2>
+  <div class="eyebrow rv">۱۵ · زمان‌بندی</div>
+  <h2 class="rv">چهار ماه تا نوروز ۱۴۰۶</h2>
   <div class="tl">
-    <div class="it rv"><div class="w">هفته ۰</div><h3>راه‌اندازی</h3><p class="muted">ردیابی و نصب اسکریپت یکتانت، انتخاب اینفلوئنسرها، تأیید خلاقیت‌ها با معیارهای برند، طراحی جریان نجوا</p></div>
-    <div class="it rv"><div class="w">هفته ۱ و ۲</div><h3>شروع و تست</h3><p class="muted">اینفلوئنسرها و تبلیغات بازدیدی، کمپین محصول و ریتارگتینگ، ویدیو؛ تست A/B پیام «قیمت منصفانه» در برابر «خانواده»</p></div>
-    <div class="it rv"><div class="w">هفته ۳ و ۴</div><h3>بهینه‌سازی و گسترش</h3><p class="muted">انتقال بودجه به کانال‌های برنده، آغاز چالش UGC، پخش در مال‌ها، تست صادراتی</p></div>
-    <div class="it rv"><div class="w">هفته ۵ و ۶</div><h3>اوج و جمع‌بندی</h3><p class="muted">پیشنهاد خرید خانوادگی، پوتین زمستانی، گزارش نهایی و پیشنهاد فاز دوم</p></div>
-  </div>
-  <h3 class="rv" style="margin-top:30px">نقشه راه تا نوروز ۱۴۰۶ <span class="tag t-r">پیشنهاد</span></h3>
-  <div class="roadmap">
-    <div class="rm rv"><b>آبان و آذر</b>فاز اول؛ کفش چرم پاییزه و دیگر محصولات فصل شیما</div>
-    <div class="rm rv d1"><b>یلدا</b>کمپین خانوادگی و هدیه</div>
-    <div class="rm rv d2"><b>اسفند</b>کمپین پیش‌نوروز؛ اوج خرید کفش</div>
+    <div class="it rv"><div class="w">هفته اول آذر</div><h3>راه‌اندازی</h3><p class="muted">نصب اسکریپت یکتانت و ردیابی، سنجش اولیه آگاهی از برند، جلسه هماهنگی با تیم محتوای شیما، طراحی جریان نجوا، تأیید ساختار کاتالوگ سه‌زبانه و صفحه فرانچایز</p></div>
+    <div class="it rv"><div class="w">آذر</div><h3>شروع</h3><p class="muted">کمپین اپ‌ها (فروش و فرانچایز)، کمپین محصول و ریتارگتینگ، فاز اول اینستاگرام، روز مادر و یلدا</p></div>
+    <div class="it rv"><div class="w">دی</div><h3>گسترش</h3><p class="muted">چکمه و بوت زمستانی، روز پدر، پخش در مال‌های شیما، تست صادرات در عراق و افغانستان، کمپین سال نو میلادی برای روسیه و CIS</p></div>
+    <div class="it rv"><div class="w">بهمن</div><h3>فاز دوم</h3><p class="muted">شروع داستان‌های خانواده هوش مصنوعی شیما، کمپین‌های خرید سازمانی و اجتماعی، بازتوزیع بودجه به کانال‌های برنده</p></div>
+    <div class="it rv"><div class="w">اسفند</div><h3>اوج و جمع‌بندی</h3><p class="muted">کمپین پیش‌نوروز در همه کانال‌ها، خرید خانوادگی، سنجش دوباره آگاهی از برند، گزارش نهایی و پیشنهاد برنامه ۱۴۰۶</p></div>
   </div>
 </section>
 
 <!-- ================= VALUES ================= -->
 <section id="values">
-  <div class="eyebrow rv">۱۵ · چارچوب خلاقیت و ارزش‌ها</div>
-  <h2 class="rv">نشاط، در چارچوب ارزش‌های شیما</h2>
+  <div class="eyebrow rv">۱۶ · چارچوب خلاقیت و ارزش‌ها</div>
+  <h2 class="rv">نشاط و هویت ایرانی، در چارچوب ارزش‌های شیما</h2>
   <p class="lead rv d1">همه محتواها پیش از انتشار با این چارچوب بررسی و توسط برند تأیید می‌شوند. <span class="tag t-v">مستند · خواسته برند</span></p>
   <div class="do-dont">
     <div class="card do rv"><h3 style="color:var(--teal)">انجام می‌دهیم</h3><ul>
+      <li><b>استفاده از البسه، موسیقی و نمادهای قومی و ملی در تبلیغات (الزامی)</b></li>
       <li>نشاط خانوادگی و صمیمی، با پوشش و رفتار متناسب</li>
       <li>نمایش واقعی کارگاه، کارگران و جوانان شاغل در تولید</li>
       <li>ادعاهای صادقانه و قابل اثبات درباره قیمت و کیفیت</li>
@@ -740,10 +880,10 @@ aside .logo-slot.has-img img{max-height:30px}
       <li>پیام‌های مناسبتی هم‌خوان با تقویم ملی و مذهبی</li>
     </ul></div>
     <div class="card dont rv d1"><h3 style="color:#b04a2a">انجام نمی‌دهیم</h3><ul>
-      <li>استفاده از موسیقی، پوشش یا رفتار خارج از معیارهای برند</li>
+      <li><b>هر محتوای غیرمجاز یا خارج از چارچوب‌های ملی و مذهبی</b></li>
       <li>تخفیف‌های اغراق‌آمیز و پیام‌های فوریت ساختگی</li>
       <li>تخریب یا مقایسه نام‌برده با رقبا</li>
-      <li>همکاری با پیج‌هایی که سابقه محتوای نامتناسب دارند</li>
+      <li>انتشار در رسانه‌ها یا پیج‌هایی که سابقه محتوای نامتناسب دارند</li>
       <li>ارسال پیام بیش از حد و آزاردهنده به مشتری</li>
     </ul></div>
   </div>
@@ -752,15 +892,16 @@ aside .logo-slot.has-img img{max-height:30px}
 <!-- ================= NEXT ================= -->
 <section id="next">
   <div class="cta rv">
-    <div class="eyebrow" style="color:#f1c98a">۱۶ · گام‌های بعدی</div>
+    <div class="eyebrow" style="color:#f1c98a">۱۷ · گام‌های بعدی</div>
     <h2>برای شروع در هفته آینده</h2>
     <ol>
-      <li>تأیید سناریوی بودجه و اولویت محورها</li>
+      <li>تأیید سناریوی بودجه چهارماهه و ترتیب محورها</li>
       <li>دسترسی به سایت برای نصب اسکریپت یکتانت و ردیابی</li>
-      <li>تعیین درصدهای پلکان خرید خانوادگی</li>
-      <li>ارسال تیزرها و محتوای موجود برای استفاده در ویدیو و مال‌ها</li>
+      <li>تأیید فهرست مال‌هایی که شیما در آن‌ها شعبه دارد</li>
+      <li>جلسه هماهنگی با تیم تولید محتوا و معرفی شخصیت‌های خانواده هوش مصنوعی</li>
+      <li>تأیید ساختار کاتالوگ سه‌زبانه و صفحه درخواست فرانچایز روی سایت شیما</li>
+      <li>تعیین درصدهای خرید خانوادگی و شرایط خرید سازمانی</li>
       <li>جلسه طراحی جریان CRM با تیم نجوا</li>
-      <li>معرفی مال‌های اولویت‌دار و برنامه شعب آینده</li>
     </ol>
     <div class="contact">
       <span>☎ ۰۹۰۲۶۴۴۹۳۴۹</span>
@@ -863,24 +1004,34 @@ const po = new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.4});
 po.observe(document.getElementById("priceBars"));
 
+/* ---------- network goal bars ---------- */
+const go2=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; e.target.querySelectorAll(".gbar i").forEach(b=>b.style.width=b.dataset.w+"%"); go2.unobserve(e.target); }),{threshold:.3});
+document.querySelectorAll(".goals").forEach(g=>go2.observe(g));
+
 /* ---------- budget scenarios ---------- */
 const C = {ig:"#FF5C8A",web:"#00C2A8",app:"#3D7BFF",dooh:"#A259FF",vid:"#FFB800",bb:"#FF6B2C",gg:"#2BD45F",crm:"#00B4E6",pr:"#FF9F1C"};
-const N = {bb:"بیلبورد دیجیتال یکتانت (موشن اسکرولی)",ig:"اینستاگرام: اینفلوئنسر، UGC و بازدیدی",web:"وب: کمپین محصول، همسان و ریتارگتینگ",vid:"ویدیو: تلوبیون، نماشا، دالفک و وب",dooh:"آی‌رسانه: نمایشگرهای مراکز خرید",app:"اپ‌ها: روبیکا، بادصبا، ایتا، آی‌گپ، سروش‌پلاس، بله و شبکه یکتانت",crm:"نجوا: CRM، پیامک داینامیک و پوش",pr:"تریبون: رپورتاژ و روابط عمومی",gg:"صادرات: گوگل ادز (فرست‌ادز) و تریدیک"};
+const N = {app:"اپ‌ها: فروش مستقیم و جذب فرانچایز؛ روبیکا، بادصبا، ایتا، آی‌گپ، سروش‌پلاس، بله و شبکه یکتانت",web:"وب: کمپین محصول، همسان، ریتارگتینگ و لید فرانچایز",ig:"اینستاگرام: تبلیغات بازدیدی برای محتوای پیج (بدون اینفلوئنسر)",bb:"بیلبورد دیجیتال یکتانت (موشن اسکرولی)",vid:"ویدیو: تلوبیون، نماشا، دالفک و وب",dooh:"آی‌رسانه: فقط مال‌های دارای شعبه شیما",crm:"نجوا: CRM، خرید خانوادگی و سازمانی",pr:"تریبون: رپورتاژ و روابط عمومی",gg:"صادرات: گوگل ادز، تریدیک و شبکه‌های بومی هر کشور"};
 const S = [
-  {total:800, a:{ig:37,web:30,app:15,crm:10,pr:8},
-   obj:"شروع کم‌ریسک با تمرکز بر اینستاگرام، فروش آنلاین کفش چرم، اپلیکیشن‌ها و CRM؛ مال‌ها و صادرات به فاز بعد منتقل می‌شوند",
-   learn:"کدام پیام (قیمت منصفانه / خانواده / ساخت ایران)، کدام اینفلوئنسرها و کدام اپ‌ها بهترین تعامل و فروش را می‌سازند",
-   scale:"در صورت هزینه هر سفارش قابل‌قبول، ورود به سناریوی پیشنهادی در فاز دوم"},
-  {total:1200, a:{ig:26,web:20,app:10,dooh:10,vid:8,bb:8,gg:8,crm:6,pr:4},
-   obj:"اجرای کامل شش محور، با بیلبورد دیجیتال و ویدیو به‌عنوان پل ارتباطی میان مخاطب تلویزیون و دیجیتال",
-   learn:"سهم هر کانال در قیف، اثر بیلبورد و ویدیو بر جست‌وجوی برند، و اولین سیگنال جدی تقاضای صادراتی",
-   scale:"بازتوزیع بودجه از هفته سوم به کانال‌های برنده و آماده‌سازی کمپین یلدا و نوروز"},
-  {total:2500, a:{ig:22,web:18,vid:12,bb:10,app:10,dooh:10,gg:10,crm:4,pr:4},
-   obj:"حضور گسترده و پیوسته در دیجیتال و ساخت زیرساخت فصل نوروز",
-   learn:"میزان پوشش قابل‌دستیابی در دیجیتال و عمق واقعی تقاضا در عراق، افغانستان و پاکستان",
-   scale:"تبدیل به قرارداد فصلی تا نوروز با سهم بزرگ‌تر از بودجه رسانه‌ای سالانه"}
+  {total:2400, a:{app:30,web:25,ig:15,crm:12,gg:10,pr:8},
+   obj:"شروع کم‌ریسک با تمرکز بر اپ‌ها (فروش مستقیم و فرانچایز)، فروش آنلاین سبد محصول، فاز اول اینستاگرام، CRM و راه‌اندازی کاتالوگ صادراتی؛ مال‌ها، ویدیو و بیلبورد به مرحله بعد منتقل می‌شوند",
+   learn:"کدام اپ‌ها، کدام دسته محصول و کدام پیام بیشترین فروش و لید فرانچایز را می‌سازند",
+   scale:"در صورت قابل‌قبول بودن هزینه هر سفارش و هر لید، ورود به سناریوی پیشنهادی از بهمن"},
+  {total:3600, a:{app:22,web:18,ig:14,gg:10,dooh:8,vid:8,bb:8,crm:7,pr:5},
+   obj:"اجرای کامل هفت محور با اولویت اپ‌ها؛ بیلبورد دیجیتال و ویدیو به‌عنوان پل میان مخاطب تلویزیون و دیجیتال، و مال‌های شیما برای کوتاه کردن مسیر تا فروشگاه",
+   learn:"سهم هر کانال در فروش و لید فرانچایز، تغییر آگاهی از برند نسبت به سنجش اولیه، و اولین سیگنال تقاضا در عراق و افغانستان",
+   scale:"بازتوزیع ماهانه بودجه به کانال‌های برنده و تمرکز بیشترین سهم روی پیش‌نوروز"},
+  {total:7500, a:{app:20,web:16,gg:14,ig:12,vid:10,bb:10,dooh:8,crm:5,pr:5},
+   obj:"حضور گسترده در اپ‌ها و دیجیتال، ورود به هر چهار بازار صادراتی و پشتیبانی کامل از جذب فرانچایز داخلی و خارجی",
+   learn:"پوشش قابل‌دستیابی در دیجیتال، عمق واقعی تقاضا در عراق، افغانستان، روسیه و CIS، و هزینه جذب هر شریک فرانچایز",
+   scale:"تبدیل به قرارداد سالانه ۱۴۰۶، هم‌راستا با اهداف توسعه شبکه فروشگاهی"}
 ];
-const alloc=document.getElementById("alloc"), donut=document.getElementById("donut"), info=document.getElementById("scInfo");
+const M = [
+  {m:"آذر", p:25, occ:"روز مادر (۹ آذر) · شب یلدا (۳۰ آذر)", f:"شروع کمپین اپ‌ها و فاز اول اینستاگرام؛ کفش چرم و بوت پاییزه، هدیه روز مادر و یلدا"},
+  {m:"دی", p:20, occ:"روز پدر (اوایل دی) · سال نو میلادی برای روسیه و CIS", f:"چکمه و بوت زمستانی، هدیه روز پدر، پخش در مال‌های شیما و تست صادرات"},
+  {m:"بهمن", p:20, occ:"نیمه شعبان (اوایل بهمن) · آغاز رمضان (اواسط بهمن)", f:"شروع فاز دوم با خانواده هوش مصنوعی، خرید سازمانی و جذب فرانچایز"},
+  {m:"اسفند", p:35, occ:"پیش‌نوروز؛ اوج خرید کفش · عید فطر (اواسط اسفند) برای عراق و افغانستان", f:"اوج همه کانال‌ها؛ خرید خانوادگی، شیمکس و صندل برای سفرهای نوروزی"}
+];
+const alloc=document.getElementById("alloc"), donut=document.getElementById("donut"), info=document.getElementById("scInfo"), months=document.getElementById("months");
 function render(i){
   const s=S[i]; let html="", acc=0, grad=[];
   Object.entries(s.a).forEach(([k,p])=>{
@@ -892,6 +1043,7 @@ function render(i){
   donut.style.background=`conic-gradient(${grad.join(",")})`;
   document.getElementById("dTotal").textContent=faNum(s.total);
   info.innerHTML=`<dt>هدف</dt><dd>${s.obj}</dd><dt>یادگیری مورد انتظار</dt><dd>${s.learn}</dd><dt>منطق توسعه</dt><dd>${s.scale}</dd>`;
+  months.innerHTML=M.map(o=>`<div class="mo"><h4>${o.m}<small>${fa(o.p)}٪ بودجه</small></h4><div class="amt">${faNum(s.total*o.p/100)} <small>میلیون تومان</small></div><div class="occ">${o.occ}</div><p>${o.f}</p></div>`).join("");
   document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",+t.dataset.s===i));
 }
 document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>render(+t.dataset.s)));
@@ -907,7 +1059,7 @@ addEventListener("scroll",()=>{ const h=document.documentElement; document.getEl
 (()=>{
   const mock=document.getElementById("mock"), bb=document.getElementById("bb"), step=document.getElementById("bbStep");
   const sole=document.getElementById("lyrSole"), leather=document.getElementById("lyrLeather"), logo=document.getElementById("lyrLogo");
-  const steps=["۱ · چرم طبیعی، تولید خودمان","۲ · زیره تزریقی، ساخت کارخانه شیما","۳ · با نشان شیما، برای همه خانواده"];
+  const steps=["۱ · چرم طبیعی، تولید خودمان","۲ · زیره تزریقی، ساخت کارخانه شیما","۳ · شیما، برای همه لحظه‌های خانواده"];
   const clamp=v=>Math.max(0,Math.min(1,v));
   function upd(){
     const m=mock.getBoundingClientRect(), b=bb.getBoundingClientRect();
